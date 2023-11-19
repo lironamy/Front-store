@@ -34,8 +34,14 @@ const ProductCard: React.FC<ProductCard> = ({
 
   const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
-
-    cart.addItem(data);
+  
+    // Assuming data.quantity is a number representing the current quantity
+    const order = {
+      ...data,
+      orderQuantity: 1, // assuming you want to add one quantity
+    };
+  
+    cart.addItem(order);
   };
   
   return ( 
