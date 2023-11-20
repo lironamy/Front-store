@@ -7,6 +7,7 @@ import useCart from '@/hooks/use-cart';
 
 import Summary from './components/summary'
 import CartItem from './components/cart-item';
+import { any } from 'zod';
 
 export const revalidate = 0;
 
@@ -32,7 +33,7 @@ const CartPage = () => {
               {cart.items.length === 0 && <p className="text-neutral-500">לא נוספו פריטים לעגלה.</p>}
               <ul>
                 {cart.items.map((item) => (
-                  <CartItem key={item.id} data={item} orderQuantity={undefined} id={''} category={undefined} name={''} price={''} isFeatured={false} size={undefined} color={undefined} images={[]} quantity={0} />
+                  <CartItem key={item.id} data={item} orderQuantity={undefined} id={''} category={Category} name={''} price={''} isFeatured={false} size={Size} color={Color} images={[]} quantity={0} />
                 ))}
               </ul>
             </div>
