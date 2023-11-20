@@ -32,7 +32,7 @@ const CartPage = () => {
               {cart.items.length === 0 && <p className="text-neutral-500">לא נוספו פריטים לעגלה.</p>}
               <ul>
                 {cart.items.map((item) => (
-                  <CartItem key={item.id} data={item} />
+                  <CartItem key={item.id} data={item} orderQuantity={undefined} id={''} category={undefined} name={''} price={''} isFeatured={false} size={undefined} color={undefined} images={[]} quantity={0} />
                 ))}
               </ul>
             </div>
