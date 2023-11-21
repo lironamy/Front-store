@@ -4,6 +4,7 @@ import Info from '@/components/info';
 import getProduct from '@/actions/get-product';
 import getProducts from '@/actions/get-products';
 import Container from '@/components/ui/container';
+import { Product } from "@/types";
 
 export const revalidate = 0;
 
@@ -33,6 +34,17 @@ const ProductPage: React.FC<ProductPageProps> = async ({
             <Gallery images={product.images} />
             <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
               <Info data={product} />
+              {
+                product.description && (
+                  <>
+                    <hr className="my-10" />
+                    <h2 className="text-2xl font-bold text-gray-900">{product.descriptionHeader}</h2>
+                    <div className="mt-4 space-y-6 text-gray-700">
+                      {product.description}
+                    </div>
+                  </>
+                )
+              }
             </div>
           </div>
           <hr className="my-10" />

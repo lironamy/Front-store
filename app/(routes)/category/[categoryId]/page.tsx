@@ -49,7 +49,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
             <div className="hidden lg:block">
               <Filter
                 valueKey="sizeId" 
-                name="סוג רשיון" 
+                name="מידה" 
                 data={sizes}
               />
               <Filter 
