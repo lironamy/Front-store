@@ -18,9 +18,8 @@ const Navbar = async () => {
       <Container>
         <div className="flex justify-around items-center h-16 p-4 ">
           <MainNav data={categories} />
-          <Link href="/" className="ml-16 flex lg:ml-0 gap-x-1 items-center flex-1 ">
+          <Link href="/" className="ml-6 flex lg:ml-0 gap-x-1 items-center flex-1 ">
             <p className="font-bold text-xl">SunFire </p>
-            <FontAwesomeIcon icon={faMotorcycle} className="w-10 h-10" />
           </Link>
           <NavbarActions />
         </div>
