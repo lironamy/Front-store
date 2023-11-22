@@ -9,3 +9,16 @@ body,
   height: 100%;
   direction: rtl;
 }
+
+.logoHd{
+  z-index: 100;
+}
+
+.navMain{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+}

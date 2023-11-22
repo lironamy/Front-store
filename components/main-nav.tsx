@@ -22,9 +22,6 @@ const MainNav: React.FC<MainNavProps> = ({
 
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
-
-    // Toggle body scroll lock
-    document.body.classList.toggle('overflow-hidden', !open);
   };
 
   const routes = data.map((route) => ({
@@ -37,7 +34,7 @@ const MainNav: React.FC<MainNavProps> = ({
   return (
     <>
       {/* Mobile Navbar */}
-      <div className="sm:hidden flex-1 justify-center text-left text-[25px] items-center mt-2 ml-2">
+      <div className="justify-center flex-1 text-[25px] items-center mt-2">
         <button
           onClick={toggleMenu}
           className="text-neutral-500 hover:text-black"
@@ -70,27 +67,6 @@ const MainNav: React.FC<MainNavProps> = ({
           ))}
         </nav>
       </div>
-
-      {/* Desktop Navbar */}
-      <nav
-        className={cn(
-          'hidden sm:flex flex-1 justify-center gap-x-4',
-          'text-sm font-medium text-neutral-500'
-        )}
-      >
-        {routes.map((route) => (
-          <Link
-            key={route.href}
-            href={route.href}
-            className={cn(
-              'text-sm font-medium transition-colors hover:text-black',
-              route.active ? 'text-black' : 'text-neutral-500'
-            )}
-          >
-            {route.label}
-          </Link>
-        ))}
-      </nav>
     </>
   );
 };
