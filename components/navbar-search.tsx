@@ -64,7 +64,7 @@ const NavbarSearch = () => {
                   />
                   <Button
                       type="submit"
-                      className="absolute left-1 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black p-2"
+                      className="absolute left-1 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black"
                   >
                       <Search
                        size={20}

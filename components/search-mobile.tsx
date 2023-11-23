@@ -4,7 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form"
 import * as z from "zod";
-import { AiOutlineSearch } from "react-icons/ai";
 import { Search } from "lucide-react";
 import Button from "@/components/ui/button";
 
@@ -44,7 +43,7 @@ const MobileSearch = () => {
 
                     <Button
                       type="submit"
-                      className="absolute left-1 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black p-2"
+                      className="absolute left-1 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black"
                   >
                       <Search
                        size={20}
