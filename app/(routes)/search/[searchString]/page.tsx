@@ -36,7 +36,7 @@ const FilterPage = async ({
 
     return ( 
         <div className="bg-white">
-            <div className="flex justify-center items-center  block sm:hidden">
+            <div className="flex justify-center items-center sm:hidden">
             <MobileSearch />
             </div>
             <Container>
