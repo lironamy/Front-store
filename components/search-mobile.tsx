@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form"
 import * as z from "zod";
 import { Search } from "lucide-react";
 import Button from "@/components/ui/button";
+import Container from "./ui/container";
 
  
 const formSchema = z.object({
@@ -29,7 +30,8 @@ const MobileSearch = () => {
     };
 
     return ( 
-        <form onSubmit={form.handleSubmit(onSubmit)}  className="w-[280px]  relative ">   
+        <Container>
+        <form onSubmit={form.handleSubmit(onSubmit)}  className="w-full  relative ">   
             <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">חפש</label>
             <div className="relative">
               
@@ -52,6 +54,7 @@ const MobileSearch = () => {
                   </Button>
             </div>
         </form>
+        </Container>
      );
 }
  
