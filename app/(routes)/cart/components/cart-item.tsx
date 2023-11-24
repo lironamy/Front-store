@@ -35,11 +35,14 @@ const CartItem: React.FC<CartOrder> = ({
 
   const decrementQuantity = () => {
     console.log('Decrementing quantity...');
+    console.log(data.orderQuantity);
     cart.decrementQuantity(data.id);
   }
   
   const incrementQuantity = () => {
     console.log('Incrementing quantity...');
+    console.log(data.orderQuantity);
+
     cart.incrementQuantity(data.id);
   }
   
@@ -100,7 +103,7 @@ const CartItem: React.FC<CartOrder> = ({
             onChange={handleQuantity}
             value={data.orderQuantity || undefined}
             min={1}
-            max={10}
+            max={data.quantity}
             type="text"
             placeholder="1"
           />

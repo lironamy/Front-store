@@ -17,10 +17,12 @@ const Navbar = async () => {
       <Container>
         <div className="flex justify-around items-center h-16 p-4 gap-2">
           <MainNav data={categories} />
-          <Link href="/" className="sm:mr-44 flex mr-0 gap-x-1 items-center flex-1 ">
+          <Link href="/" className="sm:mr-44 flex ml-4 gap-x-1 items-center flex-1 ">
             <p className="font-bold text-xl">SunFire </p>
           </Link>
-          <NavbarSearch />
+          <div className="hidden sm:block">
+          <NavbarSearch  />
+          </div>
           <NavbarActions />
         </div>
       </Container>

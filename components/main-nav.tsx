@@ -8,6 +8,7 @@ import { GrClose, GrMenu } from 'react-icons/gr';
 
 import { cn } from "@/lib/utils"
 import { Category } from "@/types";
+import NavbarSearch from "./navbar-search";
 
 interface MainNavProps {
   data: Category[];
@@ -47,7 +48,10 @@ const MainNav: React.FC<MainNavProps> = ({
             'flex flex-col bg-white absolute p-5 top-16 left-1/2 w-full transform -translate-x-1/2 z-50',
             { 'hidden': !open, 'flex': open },
           )}
-        >
+        > 
+        <div className="block sm:hidden mx-3">
+        <NavbarSearch />
+        </div>
          
           {routes.map((route) => (
             <Link

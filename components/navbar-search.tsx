@@ -29,28 +29,11 @@ const NavbarSearch = () => {
       router.push(`/search/${values.search}`);
   };
 
-  const searchBtn = () => {
-    router.push(`/search/no-results`);
-  }
+ 
 
   return (
       <form onSubmit={form.handleSubmit(onSubmit)} className="sm:w-[280px]  relative ">
-          {/* Displayed only on mobile */}
-          <div className="block sm:hidden ">
-              <Button
-                  type="submit"
-                  className="flex items-center rounded-full bg-black p-2"
-                  onClick={searchBtn}
-              >
-                  <Search
-                   size={20}
-                   color="white"
-                  />
-              </Button>
-          </div>
-
-          {/* Displayed only on larger screens */}
-          <div className="hidden sm:block">
+          <div >
               <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
                   חפש
               </label>

@@ -39,6 +39,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 
   const onAddToCart = () => {
     const res = quantitySchema.safeParse({ quantity: quantity });
+    console.log("Adding to cart from the product...");
 
     let order = {
       ...data,
@@ -55,11 +56,14 @@ const Info: React.FC<InfoProps> = ({ data }) => {
   };
 
   const incrementQuantity = () => {
+    console.log('Incrementing quantity from product page...');
+
     setError (null);
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const decrementQuantity = () => {
+    console.log('Decrementing quantity from product page...');
     setError (null);
 
     if (quantity >= 1) {
