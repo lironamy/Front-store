@@ -21,7 +21,7 @@ const getProducts = async (query: Query): Promise<Product[]> => {
             colorId: query.colorId,
             sizeId: query.sizeId,
             searchValue: query.searchValue,
-            isFeaturd: query.isFeatured,
+            isFeatured: query.isFeatured,
         }
     });
 
