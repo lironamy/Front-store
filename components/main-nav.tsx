@@ -53,7 +53,7 @@ const MainNav: React.FC<MainNavProps> = ({
 
           <Dialog.Panel
             className={cn(
-              'flex flex-col bg-white absolute p-5 top-16 left-1/2 w-full transform -translate-x-1/2 z-50 ',
+              'flex flex-col bg-white fixed p-5 top-16 left-1/2 w-full transform -translate-x-1/2 z-101 ',
               { 'hidden': !open, 'flex': open },
             )}
           >
