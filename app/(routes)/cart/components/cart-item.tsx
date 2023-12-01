@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 import IconButton from "@/components/ui/icon-button";
 import Currency from "@/components/ui/currency";
 import useCart from "@/hooks/use-cart";
-import { Product } from "@/types";
+import { Product, ProductSize } from "@/types";
 import Button from "@/components/ui/button";
 import { useState, ChangeEvent} from "react";
 import { z } from "zod";
@@ -14,36 +14,35 @@ import { z } from "zod";
 
 export interface CartOrder  extends Product {
   data: Product;
-}
-
-
-
-interface CartItemProps {
-  key: string; 
-  data: CartOrder;
+  ProductSize: ProductSize;
+  orderSize : string;
+  orderQuantity: number;
 }
 
 const CartItem: React.FC<CartOrder> = ({
-  data 
+  data,
+  ProductSize,
+  orderSize,
+  orderQuantity
 }) => {
   const cart = useCart();
   const [quantity, setQuantity] = useState(data.orderQuantity);
 
   const onRemove = () => {
-    cart.removeItem(data.id);
+    cart.removeItem(data.id , data.orderSize);
   };
 
   const decrementQuantity = () => {
     console.log('Decrementing quantity...');
     console.log(data.orderQuantity);
-    cart.decrementQuantity(data.id);
+    cart.decrementQuantity(data.id, data.orderSize);
   }
   
   const incrementQuantity = () => {
     console.log('Incrementing quantity...');
     console.log(data.orderQuantity);
 
-    cart.incrementQuantity(data.id);
+    cart.incrementQuantity(data.id, data.orderSize);
   }
   
 
@@ -85,7 +84,9 @@ const CartItem: React.FC<CartOrder> = ({
 
           <div className="mt-1 flex text-sm">
             <p className="text-gray-500">{data.color.name}</p>
-            <p className="mr-4 border-r border-gray-200 pr-4 text-gray-500">{data.size.name}</p>
+            <p className="mr-4 border-r border-gray-200 pr-4 text-gray-500">
+              {data.orderSize}
+            </p>
           </div>
           <Currency value={data.price} />
         
@@ -103,16 +104,24 @@ const CartItem: React.FC<CartOrder> = ({
             onChange={handleQuantity}
             value={data.orderQuantity || undefined}
             min={1}
-            max={data.quantity}
+            max={
+              data.productSizes.find((size) => size.sizeName === data.orderSize)?.quantity || 0
+            }
             type="text"
             placeholder="1"
           />
           <Button
-            disabled={data.orderQuantity >= data.quantity ? true : false}
+            disabled={
+              data.orderQuantity >=
+              (data.productSizes.find((size) => size.sizeName === data.orderSize)?.quantity || 0)
+            }
             onClick={incrementQuantity}
             className="rounded-full h-6 w-6 flex justify-center items-center disabled:cursor-none disabled:pointer-events-none select-none"
-          > +
+          >
+            +
           </Button>
+
+
         </div>
       </div>
         </div>

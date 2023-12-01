@@ -5,7 +5,7 @@ import { useState, ChangeEvent } from "react";
 import z from "zod";
 import Currency  from "@/components/ui/currency";
 import Button from "@/components/ui/button";
-import { Product } from "@/types";
+import { Product, ProductSize } from "@/types";
 import useCart from "@/hooks/use-cart";
 import toast from "react-hot-toast";
 
@@ -24,6 +24,8 @@ const Info: React.FC<InfoProps> = ({ data }) => {
   const cart = useCart();
   const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState(null);
+  const [selectedSize, setSelectedSize] = useState<ProductSize | null>(null);
+  const [selectedSizeId, setSelectedSizeId] = useState<string | null>(null);
 
   const handleQuantity = (e: ChangeEvent<HTMLInputElement>) => {
     let error = null;
@@ -38,20 +40,28 @@ const Info: React.FC<InfoProps> = ({ data }) => {
   };
 
   const onAddToCart = () => {
-    const res = quantitySchema.safeParse({ quantity: quantity });
-    console.log("Adding to cart from the product...");
-
-    let order = {
-      ...data,
-      orderQuantity: quantity
-    };
-
-    if (!res.success) {
-      toast.error(res.error.errors[0].message);
-    } else if ( quantity > data.quantity) {
-      toast.error('כמות גדולה מהמלאי');
-    } else {
-      cart.addItem(order);
+    console.log('Adding to cart from product page...');
+    setError(null);
+  
+    if (!selectedSize || selectedSize.quantity === undefined) {
+      toast.error('יש לבחור מידה');
+      return;
+    }
+  
+    try {
+      const result = quantitySchema.parse({ quantity });
+      const sizeChoose = selectedSize.sizeName;
+      console.log(result, sizeChoose);
+      cart.addItem({
+        ...data,
+        orderQuantity: quantity,
+        ProductSize: selectedSize,
+        orderSize: sizeChoose
+      });
+      
+    } catch (error) {
+      console.log(error);
+      toast.error('שגיאה בהוספת מוצר לעגלה');
     }
   };
 
@@ -71,6 +81,14 @@ const Info: React.FC<InfoProps> = ({ data }) => {
     }
   };
 
+  const sizeChoosen = (size: ProductSize) => {
+    console.log(`Size ${size.sizeName} choosen`);
+    setSelectedSize(size);
+    setSelectedSizeId(size.id); // Track the selected size ID
+  };
+
+  const sizeChoose = selectedSize?.quantity || 0;
+
   return ( 
     <div>
       <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
@@ -84,7 +102,15 @@ const Info: React.FC<InfoProps> = ({ data }) => {
         <div className="flex items-center gap-x-4">
           <h3 className="font-semibold text-black">מידה:</h3>
           <div>
-            {data?.size?.value}
+              {data.productSizes.map(size => (
+                <Button
+                  className={`inline-block ${selectedSizeId === size.id ? 'bg-gray-400' : 'bg-gray-300'} rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2`}
+                  onClick={() => sizeChoosen(size)}
+                  key={size.id}
+                >
+                  {size.sizeName}
+                </Button>
+              ))}
           </div>
         </div>
         <div className="flex items-center gap-x-4">
@@ -113,7 +139,8 @@ const Info: React.FC<InfoProps> = ({ data }) => {
             placeholder="1"
           />
           <Button
-            disabled={quantity >= data.quantity ? true : false}
+          
+            disabled={quantity >= sizeChoose ? true : false}
             onClick={incrementQuantity}
             className="rounded-l-none h-6 w-6 flex justify-center items-center disabled:cursor-none disabled:pointer-events-none select-none"
           > +

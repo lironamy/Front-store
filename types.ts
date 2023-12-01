@@ -1,5 +1,6 @@
 export interface Product {
   orderQuantity: any;
+  orderSize: any;
   id: string;
   category: Category;
   name: string;
@@ -7,9 +8,17 @@ export interface Product {
   description: string;
   price: string;
   isFeatured: boolean;
-  size: Size;
+  size: Size[];
   color: Color;
   images: Image[]
+  productSizes : ProductSize[];
+};
+
+export interface ProductSize {
+  id: string;
+  productId: Product[];
+  sizeId: Size[];
+  sizeName: string;
   quantity: number;
 };
 
