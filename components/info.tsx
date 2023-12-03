@@ -82,10 +82,12 @@ const Info: React.FC<InfoProps> = ({ data }) => {
   };
 
   const sizeChoosen = (size: ProductSize) => {
-    console.log(`Size ${size.sizeName} choosen`);
+    console.log(`Size ${size.sizeName} chosen`);
     setSelectedSize(size);
     setSelectedSizeId(size.id); // Track the selected size ID
+    setQuantity(1); // Reset quantity to 1 when a size is chosen
   };
+  
 
   const sizeChoose = selectedSize?.quantity || 0;
 
@@ -102,15 +104,18 @@ const Info: React.FC<InfoProps> = ({ data }) => {
         <div className="flex items-center gap-x-4">
           <h3 className="font-semibold text-black">מידה:</h3>
           <div>
-              {data.productSizes.map(size => (
+            {data.productSizes.map(size => (
+              size.quantity > 0 && (
                 <Button
                   className={`inline-block ${selectedSizeId === size.id ? 'bg-gray-400' : 'bg-gray-300'} rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2`}
                   onClick={() => sizeChoosen(size)}
                   key={size.id}
                 >
                   {size.sizeName}
+                  {size.quantity <= 0 && " - אזל מהמלאי"}
                 </Button>
-              ))}
+              )
+            ))}
           </div>
         </div>
         <div className="flex items-center gap-x-4">
@@ -137,6 +142,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
             max={1000}
             type="text"
             placeholder="1"
+            readOnly
           />
           <Button
           
