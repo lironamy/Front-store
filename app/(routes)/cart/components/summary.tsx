@@ -28,14 +28,10 @@ const Summary = () => {
   }, [searchParams, removeAll]);
 
   const totalPrice = items.reduce((acc, item) => {
-    // Convert item.price to a number before multiplying
     const itemPrice = parseFloat(item.price);
-    
-    // Check if the conversion was successful and item.orderQuantity is a number
     if (!isNaN(itemPrice) && typeof item.orderQuantity === 'number') {
       return acc + (itemPrice * item.orderQuantity);
     } else {
-      // Handle the case where conversion fails or orderQuantity is not a number
       console.error(`Invalid price or order quantity for item: ${JSON.stringify(item)}`);
       return acc;
     }
