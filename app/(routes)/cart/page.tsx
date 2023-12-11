@@ -32,8 +32,7 @@ const CartPage = () => {
               {cart.items.length === 0 && <p className="text-neutral-500">לא נוספו פריטים לעגלה.</p>}
               <ul>
 
-                {cart.items.map((item, index) => (
-                  console.log("cart items:",item, index ),
+                {cart.items.map((item) => (
                   <CartItem key={item.id} data={item} ProductSize={item.ProductSize} orderSize={''} orderQuantity={0} productSizes={[]} id={''} category={item.category} name={''} price={''} isFeatured={false} size={item.size} color={item.color} images={[]}  descriptionHeader={''} description={''} />
                 ))}
               </ul>
