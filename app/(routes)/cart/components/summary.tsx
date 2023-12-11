@@ -50,10 +50,6 @@ const Summary = () => {
     window.location = response.data.url;
   };
 
-  const clicked = () => {
-    console.log('res', { items: items.map((item) => ({ id: item.id, quantity: item.orderQuantity, orderSize: item.orderSize }) )});
-  }
-
   return ( 
     <div
       className="mt-16 rounded-lg bg-gray-50 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8"
