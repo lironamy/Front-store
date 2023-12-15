@@ -88,7 +88,15 @@ const CartItem: React.FC<CartOrder> = ({
               {data.orderSize}
             </p>
           </div>
-          <Currency value={data.price} />
+          {data.salePrice ? (
+              <>
+                <strong className="text-gray-900">
+                  <Currency value={data.salePrice} />
+                </strong>
+              </>
+            ) : (
+              <Currency value={data.price} />
+            )}
         
         <div className="flex items-center mt-5 md:mt-16 ">
         <div className="flex items-center">

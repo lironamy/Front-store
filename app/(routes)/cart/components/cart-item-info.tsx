@@ -18,7 +18,22 @@ const CartItemInfo: React.FC<CartItemInfoProps> = ({
         <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">{product.orderSize}</p>
         <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">{product.orderQuantity}</p>
       </div>
-      <p className="mt-1 text-sm font-medium text-gray-900">{product.price}</p>
+      <p className="mt-1 text-sm font-medium text-gray-900">
+      {product.salePrice ? (
+            <>
+              <del className="text-gray-600">
+                {product.price}
+              </del>{" "}
+              <strong className="text-gray-900">
+                {product.salePrice}
+              </strong>
+            </>
+          ) : (
+            <del className="text-gray-600">
+                {product.price}
+              </del>
+          )}
+      </p>
     </div>
   );
 }

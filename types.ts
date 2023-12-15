@@ -7,6 +7,7 @@ export interface Product {
   descriptionHeader: string;
   description: string;
   price: string;
+  salePrice: string;
   isFeatured: boolean;
   size: Size[];
   color: Color;

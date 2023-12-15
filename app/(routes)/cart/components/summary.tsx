@@ -8,7 +8,6 @@ import Button from "@/components/ui/button";
 import Currency from "@/components/ui/currency";
 import useCart from "@/hooks/use-cart";
 import { toast } from "react-hot-toast";
-import { set } from "zod";
 
 const Summary = () => {
   const searchParams = useSearchParams();
@@ -28,7 +27,8 @@ const Summary = () => {
   }, [searchParams, removeAll]);
 
   const totalPrice = items.reduce((acc, item) => {
-    const itemPrice = parseFloat(item.price);
+    const itemPrice = parseFloat(item.salePrice) || parseFloat(item.price);
+  
     if (!isNaN(itemPrice) && typeof item.orderQuantity === 'number') {
       return acc + (itemPrice * item.orderQuantity);
     } else {
@@ -36,6 +36,9 @@ const Summary = () => {
       return acc;
     }
   }, 0);
+  
+
+  
 
 
   const onCheckout = async () => {

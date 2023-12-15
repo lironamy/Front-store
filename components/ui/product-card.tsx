@@ -56,8 +56,19 @@ const ProductCard: React.FC<ProductCard> = ({
         <p className="text-sm text-gray-500">{data.category?.name}</p>
       </div>
       {/* Price & Reiew */}
-      <div className="flex items-center justify-between">
-        <Currency value={data?.price} />
+      <div className="flex items-center justify-start gap-2">
+        {data.salePrice ? (
+              <>
+                <del className="text-gray-600">
+                  <Currency value={data.price} />
+                </del>{" "}
+                <strong className="text-gray-900">
+                  <Currency value={data.salePrice} />
+                </strong>
+              </>
+            ) : (
+              <Currency value={data.price} />
+            )}
       </div>
     </div>
   );

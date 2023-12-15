@@ -31,7 +31,7 @@ const CartPage = () => {
               <ul>
 
                 {cart.items.map((item) => (
-                  <CartItem key={item.id} data={item} ProductSize={item.ProductSize} orderSize={''} orderQuantity={0} productSizes={[]} id={''} category={item.category} name={''} price={''} isFeatured={false} size={item.size} color={item.color} images={[]}  descriptionHeader={''} description={''} />
+                  <CartItem key={item.id} data={item} ProductSize={item.ProductSize} orderSize={''} orderQuantity={0} productSizes={[]} id={''} category={item.category} name={''} price={''} salePrice={''} isFeatured={false} size={item.size} color={item.color} images={[]}  descriptionHeader={''} description={''} />
                 ))}
               </ul>
             </div>
