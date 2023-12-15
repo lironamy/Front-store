@@ -51,12 +51,12 @@ const ProductCard: React.FC<ProductCard> = ({
         </div>
       </div>
       {/* Description */}
-      <div>
+      <div className="flex flex-col justify-center items-center">
         <p className="font-semibold text-lg">{data.name}</p>
         <p className="text-sm text-gray-500">{data.category?.name}</p>
       </div>
       {/* Price & Reiew */}
-      <div className="flex items-center justify-start gap-2">
+      <div className="flex flex-col justify-center items-center">
         {data.salePrice ? (
               <>
                 <del className="text-gray-600">
