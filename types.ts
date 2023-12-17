@@ -31,7 +31,7 @@ export interface Image {
 export interface Billboard {
   id: string;
   label: string;
-  imageUrl: string;
+  heroImages: []
 };
 
 export interface Category {
