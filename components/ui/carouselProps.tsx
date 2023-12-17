@@ -45,7 +45,7 @@ const Carousel: React.FC<CarouselProps> = ({ images, interval, label }) => {
   <>
           <div {...handlers} className="relative rounded-xl overflow-hidden cursor-pointer">
         {images && images.length > 0 && (
-          <div style={{ backgroundImage: `url(${images[currentIndex].url})` }} className="rounded-xl aspect-square md:aspect-[2.4/1] overflow-hidden bg-contain bg-center">
+          <div style={{ backgroundImage: `url(${images[currentIndex].url})` }} className="rounded-xl aspect-square md:aspect-[2.4/1] overflow-hidden bg-cover bg-center">
             <div className="h-full w-full flex flex-col justify-end items-start text-center gap-y-8">
               <div className="bg-black bg-opacity-70 flex flex-col justify-end items-start text-center gap-y-8 pr-2 title-picture-wrapper">
                 <div className="font-bold text-white text-xl sm:text-5xl lg:text-5xl">
