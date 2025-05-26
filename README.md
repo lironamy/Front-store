@@ -1,10 +1,11 @@
-# Store Dashboard
+# SunFire - Motorcycle Helmet Store
 
-![Store Dashboard](https://github.com/yourusername/StoreDashboard/assets/your-asset-id/main-screenshot.png)
+![SunFire Store](https://github.com/yourusername/StoreDashboard/assets/your-asset-id/main-screenshot.png)
 
-Store Dashboard is a modern, full-stack web application built using Next.js, TypeScript, and Tailwind CSS. It provides a comprehensive solution for store management, featuring an interactive UI, real-time updates, and secure authentication. The application is designed to deliver a seamless and delightful experience for both administrators and users.
+SunFire is a modern e-commerce platform specializing in motorcycle helmets and accessories. Built using Next.js, TypeScript, and Tailwind CSS, it provides a comprehensive solution for helmet shopping, featuring an interactive UI, real-time updates, and secure authentication. The application is designed to deliver a seamless and delightful shopping experience for motorcycle enthusiasts.
 
 ## Table of Contents
+- [Live Website](#live-website)
 - [Features](#features)
 - [Technologies](#technologies)
 - [Installation](#installation)
@@ -12,18 +13,23 @@ Store Dashboard is a modern, full-stack web application built using Next.js, Typ
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 
+## Live Website
+
+The live website for SunFire can be accessed at:
+[https://sunfire.vercel.app/](https://sunfire.vercel.app/)
+
 ## Features
 
 - **Modern UI/UX**: Built with Tailwind CSS and Radix UI components for a beautiful, responsive design
 - **Interactive Components**: 
-  - Responsive carousels and sliders
-  - Drag-and-drop functionality
-  - Interactive tables with sorting and filtering
+  - Responsive carousels and sliders for product showcases
+  - Interactive product filtering and sorting
+  - Shopping cart functionality
   - Toast notifications for user feedback
 - **State Management**: Efficient state management using Zustand
 - **Form Handling**: Robust form validation using React Hook Form and Zod
 - **API Integration**: Seamless API communication with Axios
-- **Image Management**: Cloudinary integration for efficient image handling
+- **Image Management**: Cloudinary integration for efficient product image handling
 - **Payment Processing**: Secure payment processing with Stripe integration
 - **Responsive Design**: Fully responsive layout that works across all devices
 - **Type Safety**: Full TypeScript support for better development experience
@@ -100,7 +106,7 @@ frontend/
 
 ## Contributing
 
-We welcome contributions to enhance the Store Dashboard! If you find any bugs or have ideas for improvements, feel free to:
+We welcome contributions to enhance SunFire! If you find any bugs or have ideas for improvements, feel free to:
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
