@@ -1,6 +1,7 @@
 # SunFire - Motorcycle Helmet Store
 
-![SunFire Store](https://github.com/yourusername/StoreDashboard/assets/your-asset-id/main-screenshot.png)
+![1](https://github.com/user-attachments/assets/b382d23d-985f-4bf3-90e0-a4bc717f27c2)
+
 
 SunFire is a modern e-commerce platform specializing in motorcycle helmets and accessories. Built using Next.js, TypeScript, and Tailwind CSS, it provides a comprehensive solution for helmet shopping, featuring an interactive UI, real-time updates, and secure authentication. The application is designed to deliver a seamless and delightful shopping experience for motorcycle enthusiasts.
 
@@ -108,6 +109,10 @@ frontend/
 ## Screenshots
 
 
+![6](https://github.com/user-attachments/assets/326082ed-606e-4e50-bc71-6a24014b076d)
+![5](https://github.com/user-attachments/assets/388a8f38-430a-451d-85a5-a1306d488062)
+![3](https://github.com/user-attachments/assets/e673d368-df7b-4be2-be61-32cd96a63596)
+![2](https://github.com/user-attachments/assets/b479f83e-84ad-43f0-9c3f-06935cc8993a)
 
 
 ## Contributing
