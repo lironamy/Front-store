@@ -12,6 +12,7 @@ SunFire is a modern e-commerce platform specializing in motorcycle helmets and a
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
+- [Screenshots](#Screenshots)
 
 ## Live Website
 
@@ -103,6 +104,11 @@ frontend/
 ├── public/          # Static assets
 └── types.ts         # TypeScript type definitions
 ```
+
+## Screenshots
+
+
+
 
 ## Contributing
 
