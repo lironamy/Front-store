@@ -24,7 +24,7 @@ Store Dashboard is a modern, full-stack web application built using Next.js, Typ
 - **Form Handling**: Robust form validation using React Hook Form and Zod
 - **API Integration**: Seamless API communication with Axios
 - **Image Management**: Cloudinary integration for efficient image handling
-- **Payment Processing**: PayPal integration for secure transactions
+- **Payment Processing**: Secure payment processing with Stripe integration
 - **Responsive Design**: Fully responsive layout that works across all devices
 - **Type Safety**: Full TypeScript support for better development experience
 
@@ -42,7 +42,7 @@ Store Dashboard is a modern, full-stack web application built using Next.js, Typ
 - **Form Handling**: React Hook Form + Zod
 - **API Client**: Axios
 - **Image Processing**: Cloudinary
-- **Payment**: PayPal
+- **Payment**: Stripe
 - **Icons**: React Icons, FontAwesome
 - **Animations**: Tailwind CSS Animate
 
@@ -72,7 +72,7 @@ npm install
 ```env
 NEXT_PUBLIC_API_URL=your_api_url
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-NEXT_PUBLIC_PAYPAL_CLIENT_ID=your_paypal_client_id
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
 ```
 
 ## Usage
